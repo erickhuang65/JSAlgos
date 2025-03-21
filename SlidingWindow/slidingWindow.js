@@ -1,4 +1,4 @@
-// pattern involves:
+ // pattern involves:
 // creating window which can either be an array or number from one position to another
 // useful for keeping tarck of a subset of data in an array/string
 
@@ -15,6 +15,7 @@ function  maxSubarraySum (arr, num) {
     }
     tempSum = maxSum;
     for (let i = num; i < arr.length; i++) {
+        // subtract the value before and add the next value after the array
         tempSum = tempSum - arr[i - num] + arr[i]
         if (tempSum > maxSum) {
             maxSum = tempSum;
