@@ -14,4 +14,4 @@ function maxSubarraySum(arr, num){
          total = Math.max(total, currentTotal);
       }
       return total;
-  }
+  };
