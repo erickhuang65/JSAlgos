@@ -7,7 +7,6 @@ function nestedEvenSum (obj) {
     // if true; sum+=value
     // else; continue to the next key
     let sum = 0;
-    let newObj = {}
     for(let key in obj) {
         if(typeof obj[key] === 'object' && obj[key] !== null) {
             sum += nestedEvenSum(obj[key]);
