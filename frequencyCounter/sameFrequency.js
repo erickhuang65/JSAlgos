@@ -1,5 +1,4 @@
 function sameFrequency(a,b){
-    // good luck. Add any arguments you deem necessary.
     let num1 = a.toString();
     let num2 = b.toString();
     let hash = {};
