@@ -1,9 +1,12 @@
 function selectionSort(arr) {
-    // sort the array by placing the smallest value in the front
-    // store the first element as the smallest value you've seen so far
-    // compare this item to the next item until you find the smaller num
-    // if the smaller number is found, assign to a min variable
-    // if the min is not the value (index) you began with, swap the two values;
+    // LOOPS THROUGH THE ARRAY AND "SELECT" THE MINIMUM AND SWAP
+    
+    // sort the array by placing the "minimum" value in the front
+    // store the first element as the "minimum" value you've seen so far
+    // compare this item to the next item until you find the smaller number
+    // if the smaller number is found, assign to var "minimum"
+
+    // if the minimum is not the value (index) you began with, swap the two values;
     // repeat this with the next element until the array is sorted;
     for (let i = 0; i < arr.length; i++) {
         let lowest = i;

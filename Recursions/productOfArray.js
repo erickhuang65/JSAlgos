@@ -5,4 +5,10 @@ function productOfArray(arr) {
         return 1;
     }
     return arr[0] * productOfArray(arr.slice(1));
+};
+
+function collectOddValues(arr) {
+    let newArr = []
+    newArr = newArr.concat(collectOddValues(arr.slice(1)));
+    return newArr;
 }
