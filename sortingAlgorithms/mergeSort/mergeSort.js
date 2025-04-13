@@ -34,10 +34,10 @@ function merge(a, b) {
             j++;
         }
     }
-    if(i != a.length) {
+    if(i < a.length) {
         result.push(...a.slice(i));
     }
-    if( j != b.length) {
+    if( j < b.length) {
         result.push(...b.slice(j));
     }
     return result;
