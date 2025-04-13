@@ -14,11 +14,11 @@
 // if the value in the first array is larger than the value in the second array, push the value in the second array into our results and move on to the next value in the second array
 // once we exhaust one array, push in all remaining values from the other array
 
-function mergeSort(a, b) {
+function merge(a, b) {
     let result = [];
     let i = 0;
     let j = 0;
-    while(i != a.length && j != b.length) {
+    while(i < a.length && j < b.length) {
         if(a[i] < b[j]) {
             result.push(a[i]);
             i++;
@@ -43,4 +43,4 @@ function mergeSort(a, b) {
     return result;
 }
 
-console.log(mergeSort([1,10,50], [2,14,99,100]));
+console.log(merge([1,10,50], [2,14,99,100]));
