@@ -1,0 +1,11 @@
+Comparing Bubble vs Selection vs Insertion
+
+Time Complexity:
+
+Bubble sort: if data is totally sorted use bubble sort
+
+Insertion sort: if nearly sorted data use insertion sort
+
+Selection sort: does not perform well with almost sorted data
+
+Space Complexity: All 3 algorithms are the same 
