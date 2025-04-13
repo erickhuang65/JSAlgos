@@ -19,11 +19,11 @@ function merge(a, b) {
     let i = 0;
     let j = 0;
     while(i < a.length && j < b.length) {
-        if(a[i] < b[j]) {
+        if(b[j] > a[i]) {
             result.push(a[i]);
             i++;
         }
-        if(a[i] > b[j]) {
+        if(b[j] < a[i]) {
             result.push(b[j]);
             j++;
         }
@@ -37,7 +37,7 @@ function merge(a, b) {
     if(i < a.length) {
         result.push(...a.slice(i));
     }
-    if( j < b.length) {
+    if(j < b.length) {
         result.push(...b.slice(j));
     }
     return result;
