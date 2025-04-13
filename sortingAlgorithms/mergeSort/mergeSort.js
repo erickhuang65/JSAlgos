@@ -6,7 +6,7 @@
 // it is useful to first implement a function responsible for merging two sorted arrays
 // this helper function should create a new array which is also sorted, and consist of all of the elements
  
-// Pseudocode
+// Pseudocode for merge
 // create an empty array, and look at the smallest values in the beggining of each input array
 // have two counters (i, j) both start at index 0
 // use while loop; while there are still values we haven't looked at;
@@ -51,4 +51,17 @@ function merge(a, b) {
     return result;
 }
 
-console.log(merge([1,10,50], [2,14,99,100]));
+// Pesudocode for mergeSort
+// break up the array into halves until you have arrays that are empty or one element
+// once you have smaller sorted arrays, merge those arrays with other sorted arrays until you are back at full length of array
+// once the array has been merged back together, return the merged (and sorted) array
+
+function mergeSort(arr) {
+    if(arr.length <= 1) {
+        return arr;
+    }
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
