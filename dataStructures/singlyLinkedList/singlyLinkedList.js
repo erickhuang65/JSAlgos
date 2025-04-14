@@ -15,7 +15,7 @@ class SinglyLinkedList {
         this.tail = null;
         this.length = 0;
     }
-    // push method pesudocode:
+    // Push pesudocode:
     // function should accept a value
     // create a new node using the value passed in
     // if there is no head on the list, set the head and tail to be the newly created node
@@ -61,7 +61,6 @@ class SinglyLinkedList {
         }
         return current;
     }
-    
     // Shifting pseudocode:
     // removing a new node from the beggining of the Linked List
     // delete the head and move the head to the item after
@@ -77,10 +76,8 @@ class SinglyLinkedList {
         }
         return current;
     }
-
     // adding a new node to the beggining of the LL;
     unShift(val) {
-        // create a new node using the value passed in
         // if there is no head property, set head & tail to the new node;
         // otherwise set the newly created Node's property to the current head property
         // set the current head to be the value after
@@ -98,7 +95,6 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
-
     // retrieve a node by its position in the LL
     // should accept an index
     // if the index is < 0 or >= length of the list; return null
@@ -115,7 +111,6 @@ class SinglyLinkedList {
         }
         return current;
     }
-
     // Set: changing the value of a node based on its position in the LL
     // function should accept a value and an index
     // use get() to find the specific node
@@ -127,8 +122,30 @@ class SinglyLinkedList {
         }
         return false; 
     }
-
+    // adding a new node to the LL at a specific index
     insert(val, index) {
-        
+        // 1. check edge case: if index is less than 0 or greater than length of the Linked List
+        if(index < 0 || index > this.length) {
+            return false;
+        }
+        if(index === this.length) {
+            this.push(val);
+            return true;
+        }
+        // 1b check edge case: if insert at head and insert at tail (use unshift, push)
+        if(index === 0) {
+            // unshift returns an entire list
+            this.unShift(val);
+            return true; 
+        }
+        // set the next property on that node to be the new node
+        // set the next property on the new node to be the previous next
+        // 6. return true
+        var newNode = new Node(val);
+        var prev = this.get(index -1)
+        var temp = prev.next;
+        newNode.next = temp;
+        this.length++;
+        return true;
     }
 }
