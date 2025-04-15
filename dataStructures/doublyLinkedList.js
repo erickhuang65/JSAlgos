@@ -61,10 +61,33 @@ class DoublyLinkedList {
     // remove a node from the beggining of the DLL
     shift() {
         // edge case: if there is no head return undefined
-        //  
+        // edge case: if length equal to 1; set head & tail to null;
+        if(this.length === 0) {
+            return undefined;
+        }
+        var poppedHead = this.head;
+        if(this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            // create a var to hold the head;
+            // point the head to the next value;
+            // set the value prev to null;
+            // set the var holding the head to null;
+            this.head = poppedHead.next;
+            this.head.prev = null;
+            poppedHead.next = null;
+        }
+        this.length--;
+        return poppedHead;
     }
-    
-    unshift() {
-
+    // adding a new node to the beggining of the DLL;
+    unShift(val) {
+        // edge case: if the length is empty; assign the newNode to head & tail;
+        // create a new node with the val passed in
+        // create a temp var to store the current head
+        // point the new node to temp var prev
+        // increment length
+        // return true;
     }
 }
