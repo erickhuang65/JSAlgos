@@ -148,4 +148,41 @@ class SinglyLinkedList {
         this.length++;
         return true;
     }
+    // remove a node from a specific position
+    // Remove pseudocode:
+    // if index is < 0 or > length return undefined
+    // if index is the same as lenght -1, pop
+    // otherwise, use get(), access the node at index -1
+    // set the next property on that node to be the one after
+    // decrement length
+    // return value of the node removed
+    remove(index) {
+        if(index < 0 || index >= this.length) {
+            return undefined;
+        }
+        if(index === 0) {
+            return this.shifting();
+        }
+        if(index === this.length - 1) {
+            return this.pop();
+        }
+        // this is to find the node before the index
+        var previousNode = this.get(index -1);
+        // this is to assign the node we'd like to remove; and its removed
+        var removed = previousNode.next;
+        // this is to assign the assign the next value to the index of the removed node
+        previousNode.next = removed.next;
+        this.length--;
+        return removed; // return the value that was removed
+    }
+
+    reverse() {
+    // Reverse pseudocode:
+    // traverse the LL and reverse as you go
+    // make head the tail
+    // create a temp var to hold the value after
+    // point the current.next to the temp var
+    // when current.next reaches the end set to head
+    // return the LL
+    }
 }
