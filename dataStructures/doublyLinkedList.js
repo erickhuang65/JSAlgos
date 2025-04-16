@@ -110,14 +110,12 @@ class DoublyLinkedList {
         if(index < 0 || index >= this.length) {
             return null;
         }
-        // create a var that divides the length by half
-        var mid = Math.floor(this.length / 2);
         // create a counter to track nodes we are on;
         var counter = 0;
         // if the index is <= mid; loop from the head to get to the index;
         // else start from the tail to get to the index;
         // create a var to track current node;
-        if(index <= mid) {
+        if(index <= this.length/2) {
             var current = this.head;
             while(counter != index) {
                 current = current.next;
@@ -136,10 +134,18 @@ class DoublyLinkedList {
     }
 
     // replace the value of a node to the DLL;
-    set(val) {
-        
+    // update the node at the index with;
+    set(index, val) {
+        // use get() to find the existed node;
+        var node = this.get(index);
+        if(node != null) {
+            node.val = val; 
+            return true;
+        }
+        return false;
     }
 
+    // add a node to the DLL;
     insert() {
         
     }
