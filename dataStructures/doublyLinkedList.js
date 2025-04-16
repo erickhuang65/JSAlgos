@@ -111,15 +111,40 @@ class DoublyLinkedList {
             return null;
         }
         // create a var that divides the length by half
-        var mid = this.length / 2;
+        var mid = Math.floor(this.length / 2);
         // create a counter to track nodes we are on;
         var counter = 0;
-        // if the index is <= the var; start from the head to get to the index;
+        // if the index is <= mid; loop from the head to get to the index;
         // else start from the tail to get to the index;
-        while(counter != index) {
-            if(index <= mid) {
+        // create a var to track current node;
+        if(index <= mid) {
+            var current = this.head;
+            while(counter != index) {
+                current = current.next;
                 counter++
             }
+            return current;
+        } else {
+            var current = this.tail;
+            var counter = this.length - 1;
+            while(counter != index) {
+                current = current.prev;
+                counter--;
+            }
+            return current;
         }
+    }
+
+    // replace the value of a node to the DLL;
+    set(val) {
+        
+    }
+
+    insert() {
+        
+    }
+
+    remove() {
+
     }
 }
