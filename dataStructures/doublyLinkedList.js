@@ -83,11 +83,28 @@ class DoublyLinkedList {
     }
     // adding a new node to the beggining of the DLL;
     unShift(val) {
-        // edge case: if the length is empty; assign the newNode to head & tail;
         // create a new node with the val passed in
-        // create a temp var to store the current head
-        // point the new node to temp var prev
+        var newNode = new Node(val);
+        // edge case: if the length is empty; assign the newNode to head & tail;
+        if(this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            // set the newNode to the previous property of the current head
+            this.head.prev = newNode;
+            // point the current head to the new head as .next
+            newNode.next = this.head;
+            // update the head to the newNode;
+            this.head = newNode;
+        }
         // increment length
+        this.length++
         // return true;
+        return this;
+    }
+    // Get: accessing a node in the DLL by its position
+    get(index) {
+        // returns the node at that index;
+        // edge case: 
     }
 }
