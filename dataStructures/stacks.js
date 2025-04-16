@@ -30,4 +30,24 @@ class Stack{
             return ++this.size;
         }
     }
+
+    pop() {
+        // if there are no nodes in the stack return null;
+        if(!this.first) {
+            return null;
+        }
+        // create a temp to hold the first property in the stack
+        var temp = this.first;
+        // if there is only 1 node, set the first and last property to null;
+        if(this.size === 1) {
+            this.first = null;
+            this.last = null;
+        }
+        // if there is more than 1 node, set the first property to the next property on the current first
+        this.first = this.first.next;
+        // decrement size by 1
+        // return the poppedNode
+        this.size--
+        return temp.value;
+    }
 }
