@@ -106,13 +106,20 @@ class DoublyLinkedList {
     get(index) {
         // returns the node at that index;
         // edge case: is index out of bound
-        // edge case: is the index provided closer to 0 or closer to the last property
-        if(index > this.length || index < this.length) {
+        // is the index provided closer to 0 or closer to the last property
+        if(index < 0 || index >= this.length) {
             return null;
         }
         // create a var that divides the length by half
+        var mid = this.length / 2;
         // create a counter to track nodes we are on;
+        var counter = 0;
         // if the index is <= the var; start from the head to get to the index;
-        // else start from the tail to get to the index;
+       
+        while(counter != index) {
+            if(index <= mid) {
+                counter++
+            }
+        }
     }
 }
