@@ -115,7 +115,7 @@ class DoublyLinkedList {
         // create a counter to track nodes we are on;
         var counter = 0;
         // if the index is <= the var; start from the head to get to the index;
-       
+        // else start from the tail to get to the index;
         while(counter != index) {
             if(index <= mid) {
                 counter++
