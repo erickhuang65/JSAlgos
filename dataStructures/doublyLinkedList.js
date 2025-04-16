@@ -105,6 +105,14 @@ class DoublyLinkedList {
     // Get: accessing a node in the DLL by its position
     get(index) {
         // returns the node at that index;
-        // edge case: 
+        // edge case: is index out of bound
+        // edge case: is the index provided closer to 0 or closer to the last property
+        if(index > this.length || index < this.length) {
+            return null;
+        }
+        // create a var that divides the length by half
+        // create a counter to track nodes we are on;
+        // if the index is <= the var; start from the head to get to the index;
+        // else start from the tail to get to the index;
     }
 }
