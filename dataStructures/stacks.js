@@ -27,7 +27,7 @@ class Stack{
             this.first = newNode;
             this.first.next = temp;
             // increment the size of the stack by 1;
-            return ++this.size;
+            return this.size++;
         }
     }
 
@@ -46,7 +46,6 @@ class Stack{
         // if there is more than 1 node, set the first property to the next property on the current first
         this.first = this.first.next;
         // decrement size by 1
-        // return the poppedNode
         this.size--
         return temp.value;
     }

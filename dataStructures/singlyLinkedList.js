@@ -51,6 +51,7 @@ class SinglyLinkedList {
         var newTail = current;
         while(current.next) {
             newTail = current;
+            // this is to update the current in order to traverse;
             current = current.next;
         }
         this.tail = newTail;
@@ -178,11 +179,19 @@ class SinglyLinkedList {
 
     reverse() {
     // Reverse pseudocode:
-    // traverse the LL and reverse as you go
-    // make head the tail
-    // create a temp var to hold the value after
-    // point the current.next to the temp var
-    // when current.next reaches the end set to head
-    // return the LL
+    // create a var to hold the current head;
+    var node = this.head;
+    this.head = this.tail;
+    // point the head to be the tail;
+    this.tail = node;
+    var next = null; 
+    var prev = null;
+    for(let i = 0; i < this.length; i++) {
+        next = node.next;
+        this.next = prev;
+        prev = next;
+        node = next;
+    }
+    return this;
     }
 }
