@@ -10,7 +10,7 @@ function isPalindrome(string) {
     strArr.forEach(char => {
         if(alphabet.includes(char)) {
             newStrArr.push(char);
-        }
+        }; 
     })
     // the new array should only have just characters
     // reverse the array and compare it to the original array
