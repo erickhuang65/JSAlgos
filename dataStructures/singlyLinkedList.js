@@ -192,6 +192,6 @@ class SinglyLinkedList {
         prev = next;
         node = next;
     }
-    return this;
+    return this; 
     }
 }
