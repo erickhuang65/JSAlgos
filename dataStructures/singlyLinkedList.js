@@ -15,7 +15,13 @@ class SinglyLinkedList {
         this.tail = null;
         this.length = 0;
     }
-
+    // Push pesudocode:
+    // function should accept a value
+    // create a new node using the value passed in
+    // if there is no head on the list, set the head and tail to be the newly created node
+    // set the next property on the tail to be the new node and set the tail property on the list to be the newly created node
+    // increment the length by one
+    // return the linked list
     push(val) {
         var newNode = new Node(val)
         if(!this.head) {
