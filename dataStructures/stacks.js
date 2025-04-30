@@ -13,7 +13,7 @@ class Stack{
     }
 
     push(val){
-        // create a new node with the argument
+
         var newNode = new Node(val);
         // if there are no nodes in the stack, set the first and last to the new node
         if(!this.first) {
