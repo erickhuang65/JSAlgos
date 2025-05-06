@@ -9,7 +9,7 @@ class Node {
 }
 
 class SinglyLinkedList {
-
+    // have a pointer to head and tail
     constructor() {
         this.head = null;
         this.tail = null;
